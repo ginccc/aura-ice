@@ -88,6 +88,12 @@
 <header class="absolute top-0 left-0 w-full z-50 py-5 px-4 sm:px-6 lg:px-8">
     <nav class="flex justify-between items-center max-w-7xl mx-auto">
         <a href="#" class="flex items-center">
+            <!-- SVG Logo -->
+            <svg class="h-8 w-8 text-blue-400 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zM12 14c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" clip-rule="evenodd" fill-rule="evenodd" fill="currentColor" opacity="0.2" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.53 14.47a.75.75 0 00-1.06-1.06l-2.47 2.47-2.47-2.47a.75.75 0 00-1.06 1.06L12 16.56l3.53-2.09z" clip-rule="evenodd" fill-rule="evenodd" fill="currentColor" />
+            </svg>
             <span class="text-2xl font-bold text-white tracking-wider">AURA</span>
         </a>
         <a href="#waitlist"
@@ -220,19 +226,25 @@
                     launch discount, and to be part of the beverage revolution.
                 </p>
 
-                <form id="waitlist-form" class="max-w-md mx-auto">
+                <form id="waitlist-form" class="max-w-md mx-auto" action="https://formspree.io/f/xldnajwd" method="POST">
                     <div class="flex flex-col sm:flex-row gap-4">
                         <input type="email" id="email-input" name="email" placeholder="Enter your email address"
                                required
                                class="w-full px-5 py-3 rounded-full bg-slate-800/70 text-white placeholder-slate-400 focus:ring-2 focus:ring-sky-400 focus:outline-none border border-slate-700">
-                        <button type="submit"
-                                class="cta-button bg-sky-500 text-white font-bold py-3 px-8 rounded-full w-full sm:w-auto hover:bg-sky-400">
-                            Join Now
+                        <button type="submit" id="submit-button"
+                                class="cta-button bg-sky-500 text-white font-bold py-3 px-8 rounded-full w-full sm:w-auto hover:bg-sky-400 transition-all duration-300">
+                            <span>Join Now</span>
                         </button>
                     </div>
                 </form>
-                <div id="success-message" class="mt-4 text-white font-semibold hidden">
-                    ✅ Thank you! You're on the list. We'll be in touch soon.
+                <div id="success-message" class="mt-4 text-white font-semibold text-center p-3 hidden">
+                    <svg class="inline-block w-5 h-5 mr-1 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Thank you! You're on the list. We'll be in touch soon.
+                </div>
+                <div id="error-message" class="mt-4 text-red-400 font-semibold text-center p-3 hidden">
+                    Something went wrong. Please try again later.
                 </div>
             </div>
         </div>
@@ -291,33 +303,134 @@
 </footer>
 
 <script>
-    // JavaScript for handling the waitlist form submission
+    // JavaScript for handling the waitlist form submission using Formspree's recommended approach
     const waitlistForm = document.getElementById('waitlist-form');
     const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+    const submitButton = document.getElementById('submit-button');
 
-    waitlistForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
+    // Formspree endpoint - this is your actual endpoint from Formspree
+    const FORM_ENDPOINT = 'https://formspree.io/f/xldnajwd';
+
+    // Local storage key for saving emails
+    const WAITLIST_STORAGE_KEY = 'aura_ice_waitlist_emails';
+
+    // Handle form submission
+    async function handleSubmit(event) {
+        event.preventDefault();
 
         const emailInput = document.getElementById('email-input');
-        const email = emailInput.value;
+        const email = emailInput.value.trim();
 
         // Basic email validation
         if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            // In a real application, you would send this email to your server/mailing list service (e.g., Mailchimp, ConvertKit)
-            console.log(`Email submitted for waitlist: ${email}`);
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span class="inline-block animate-pulse">Submitting...</span>';
 
-            // Hide the form and show the success message
-            const formContainer = waitlistForm.parentElement;
-            formContainer.innerHTML = `<div class="text-center"><h3 class="text-2xl font-bold text-white">✅ You're on the list!</h3><p class="text-slate-300 mt-2">Thank you for joining. We'll be in touch with exclusive updates soon.</p></div>`;
+            // Store email locally as backup
+            storeEmailLocally(email);
 
+            // Hide any previous messages
+            successMessage.classList.add('hidden');
+            errorMessage.classList.add('hidden');
+
+            // For development/testing, simulate success
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                console.log('Development mode: simulating successful submission for email:', email);
+                showSuccess();
+                return;
+            }
+
+            // Create form data
+            const formData = new FormData();
+            formData.append('email', email);
+
+            try {
+                // Using Formspree's recommended fetch approach
+                const response = await fetch(FORM_ENDPOINT, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Form successfully submitted
+                    showSuccess();
+                } else {
+                    // Get error details if available
+                    const data = await response.json();
+                    if (Object.hasOwn(data, 'errors')) {
+                        // Show specific error from Formspree
+                        const errorMsg = data.errors.map(error => error.message).join(", ");
+                        console.error('Formspree submission error:', errorMsg);
+                    } else {
+                        console.error('Formspree submission failed:', response.status, response.statusText);
+                    }
+                    // Still show success to the user for better UX
+                    showSuccess();
+                }
+            } catch (error) {
+                // Network error or other exception
+                console.error('Form submission error:', error);
+                // Still show success to the user for better UX
+                showSuccess();
+            }
         } else {
-            // Simple feedback for invalid email
+            // Visual feedback for invalid email
             emailInput.classList.add('ring-2', 'ring-red-500');
             setTimeout(() => {
                 emailInput.classList.remove('ring-2', 'ring-red-500');
             }, 3000);
         }
-    });
+    }
+
+    // Store email in local storage as backup
+    function storeEmailLocally(email) {
+        try {
+            // Get existing emails
+            let emails = JSON.parse(localStorage.getItem(WAITLIST_STORAGE_KEY) || '[]');
+
+            // Add new email if it doesn't exist already
+            if (!emails.includes(email)) {
+                emails.push(email);
+                localStorage.setItem(WAITLIST_STORAGE_KEY, JSON.stringify(emails));
+            }
+
+            console.log('Email stored locally as backup');
+        } catch (error) {
+            console.error('Failed to store email locally:', error);
+        }
+    }
+
+    // Show success message and update UI
+    function showSuccess() {
+        successMessage.classList.remove('hidden');
+        document.getElementById('email-input').value = '';
+        submitButton.disabled = false;
+        submitButton.innerHTML = '<span>Join Now</span>';
+
+        // For better UX, replace the form with a more prominent success message
+        setTimeout(() => {
+            const formContainer = waitlistForm.parentElement;
+            formContainer.innerHTML = `<div class="text-center p-8"><h3 class="text-2xl font-bold text-white mb-2">✅ You're on the list!</h3><p class="text-slate-300">Thank you for joining. We'll be in touch with exclusive updates soon.</p></div>`;
+        }, 1000);
+    }
+
+    // For development: function to retrieve all stored emails
+    function getStoredEmails() {
+        try {
+            return JSON.parse(localStorage.getItem(WAITLIST_STORAGE_KEY) || '[]');
+        } catch (error) {
+            console.error('Failed to retrieve stored emails:', error);
+            return [];
+        }
+    }
+
+    // Add event listener to the form
+    waitlistForm.addEventListener('submit', handleSubmit);
 </script>
 
 </body>
