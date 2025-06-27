@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Aura Ice - Elevate Every Sip with Artisanal Ice</title>
+    <meta name="description"
+          content="Discover Aura Ice, the future of beverages. Our slow-melting, flavor-infused artisanal ice spheres transform any drink into a masterpiece. Join the waitlist for exclusive early access.">
+    <meta name="keywords"
+          content="artisanal ice, craft cocktails, specialty ice, flavor infused ice, slow melting ice, home bar, mixology, sustainable ice, gourmet ice, clear ice, cocktail ice">
+    <meta name="author" content="Aura Ice">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aura-ice.com/"> <!-- Replace with your actual URL -->
+    <meta property="og:title" content="Aura Ice - Elevate Every Sip with Artisanal Ice">
+    <meta property="og:description"
+          content="Slow-melting, flavor-infused ice spheres that transform any drink into a masterpiece. Join the waitlist.">
+    <!-- IMAGE PROMPT: A high-end, cinematic lifestyle shot for social sharing. A beautiful, low-lit bar scene with a hand holding a crystal whiskey glass. Inside the glass is a perfectly clear Aura Ice sphere with a sprig of rosemary visibly frozen inside. The liquid is a golden-brown whiskey. Aspect ratio 1.91:1. -->
+    <meta property="og:image" content="https://placehold.co/1200x630/020617/38bdf8?text=Aura+Ice+in+Whiskey">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.aura-ice.com/"> <!-- Replace with your actual URL -->
+    <meta property="twitter:title" content="Aura Ice - Elevate Every Sip with Artisanal Ice">
+    <meta property="twitter:description"
+          content="Slow-melting, flavor-infused ice spheres that transform any drink into a masterpiece. Join the waitlist.">
+    <!-- IMAGE PROMPT: (Use the same prompt as og:image) A high-end, cinematic lifestyle shot for social sharing. A beautiful, low-lit bar scene with a hand holding a crystal whiskey glass. Inside the glass is a perfectly clear Aura Ice sphere with a sprig of rosemary visibly frozen inside. The liquid is a golden-brown whiskey. Aspect ratio 1.91:1. -->
+    <meta property="twitter:image" content="https://placehold.co/1200x630/020617/38bdf8?text=Aura+Ice+in+Whiskey">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* slate-950 */
+        }
+
+        .hero-bg {
+            background-image: radial-gradient(at 20% 25%, hsla(215, 84%, 20%, 0.4) 0px, transparent 50%),
+            radial-gradient(at 80% 30%, hsla(195, 85%, 25%, 0.3) 0px, transparent 50%),
+            radial-gradient(at 20% 80%, hsla(280, 70%, 30%, 0.3) 0px, transparent 50%),
+            radial-gradient(at 80% 85%, hsla(210, 80%, 40%, 0.2) 0px, transparent 50%);
+        }
+
+        .section-gradient {
+            background-image: radial-gradient(at 50% 0%, hsla(215, 84%, 20%, 0.25) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, hsla(280, 70%, 30%, 0.2) 0px, transparent 50%),
+            radial-gradient(at 100% 100%, hsla(195, 85%, 25%, 0.2) 0px, transparent 50%);
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2), 0 6px 6px rgba(56, 189, 248, 0.2);
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+            background-color: rgba(15, 23, 42, 0.5); /* slate-900 with opacity */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(51, 65, 85, 0.5); /* slate-700 with opacity */
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(56, 189, 248, 0.5); /* sky-400 with opacity */
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-300 antialiased">
+
+<!-- Header -->
+<header class="absolute top-0 left-0 w-full z-50 py-5 px-4 sm:px-6 lg:px-8">
+    <nav class="flex justify-between items-center max-w-7xl mx-auto">
+        <a href="#" class="flex items-center">
+            <span class="text-2xl font-bold text-white tracking-wider">AURA</span>
+        </a>
+        <a href="#waitlist"
+           class="cta-button bg-sky-500 text-white font-semibold py-2 px-5 rounded-full hover:bg-sky-400">
+            Join Waitlist
+        </a>
+    </nav>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg">
+        <div class="relative z-10 text-center px-4 py-20">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                Don't Just Chill Your Drink.
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-teal-300">Elevate&nbsp;It.</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-300 mb-10">
+                Introducing Aura Ice: Crystal-clear, slow-melting artisanal ice spheres infused with natural botanicals.
+                The future of your favorite beverage is here.
+            </p>
+            <a href="#waitlist"
+               class="cta-button bg-sky-500 text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-sky-400">
+                Get Exclusive Early Access
+            </a>
+        </div>
+    </section>
+
+    <!-- Solution/Features Section -->
+    <section class="py-20 sm:py-32 section-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">The Art of the Perfect Chill</h2>
+                <p class="max-w-3xl mx-auto text-slate-400 text-lg">
+                    We've reinvented ice to be the most exciting part of your drink.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card p-8 rounded-2xl text-center">
+                    <!-- IMAGE PROMPT: A stunning, macro product shot of a single, perfectly clear, spherical ice cube against a dark, minimalist background. A single light source should highlight its flawless clarity and smooth surface. -->
+                    <img src="https://placehold.co/400x300/0f172a/1e3a8a?text=Perfectly+Clear+Sphere"
+                         alt="Crystal-clear ice sphere" class="w-full h-48 object-cover rounded-lg mb-6">
+                    <h3 class="text-xl font-semibold text-white mb-3">Crystal-Clear Perfection</h3>
+                    <p class="text-slate-400">Our proprietary, 17-stage purification and freezing process removes all
+                        impurities and micro-bubbles, resulting in a flawless, glass-like sphere.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card p-8 rounded-2xl text-center">
+                    <!-- IMAGE PROMPT: A lifestyle photo showing a rocks glass with an Aura Ice sphere and whiskey. A stopwatch next to the glass reads "30:00". The ice sphere is still mostly intact, demonstrating its slow-melting quality. -->
+                    <img src="https://placehold.co/400x300/0f172a/1e3a8a?text=Slow-Melting"
+                         alt="Slow-melting ice in a glass" class="w-full h-48 object-cover rounded-lg mb-6">
+                    <h3 class="text-xl font-semibold text-white mb-3">Slow-Melting by Design</h3>
+                    <p class="text-slate-400">The dense structure and large surface area mean our spheres melt up to 5x
+                        slower than regular cubes, chilling your drink perfectly without dilution.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card p-8 rounded-2xl text-center">
+                    <!-- IMAGE PROMPT: A close-up shot of an Aura Ice sphere being dropped into a clear gin and tonic. Inside the ice, a vibrant swirl of dried hibiscus and a slice of dehydrated orange are clearly visible. -->
+                    <img src="https://placehold.co/400x300/0f172a/1e3a8a?text=Flavor+Infusion"
+                         alt="Ice sphere with flavor infusion" class="w-full h-48 object-cover rounded-lg mb-6">
+                    <h3 class="text-xl font-semibold text-white mb-3">Botanical Infusion</h3>
+                    <p class="text-slate-400">Elevate your drink with infusions of natural botanicals. As the ice melts,
+                        it releases aromatic notes of citrus, herbs, or spices for a dynamic experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section - UPDATED -->
+    <section class="py-20 sm:py-32 section-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">An Effortless Experience</h2>
+                <p class="max-w-3xl mx-auto text-slate-400 text-lg">
+                    From our door to your glass in three simple steps.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center relative">
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="flex items-center justify-center h-24 w-24 rounded-full bg-slate-800 border-2 border-slate-700 text-sky-400 mx-auto mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.998 15.998 0 013.388-1.62m0 0a2.25 2.25 0 012.4 2.245 3 3 0 005.78 1.128 4.5 4.5 0 00-8.4-2.245c0-.399.078-.78.22-1.128zm0 0A15.995 15.995 0 0012 13.5a15.995 15.995 0 00-3.388-1.62m0 0c-.065.21-.1.433-.1.66a2.25 2.25 0 002.25 2.25m0 0a2.25 2.25 0 002.25-2.25m0 0a2.25 2.25 0 00-2.25-2.25m0 0A2.25 2.25 0 0012 13.5m0-2.25a2.25 2.25 0 00-2.25-2.25m0 0a2.25 2.25 0 00-2.25 2.25m0 0A2.25 2.25 0 0012 13.5m0 0a2.25 2.25 0 002.25 2.25m0 0a2.25 2.25 0 002.25-2.25"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">1. Choose Your Aura</h3>
+                    <p class="text-slate-400">Select from our curated infusions, like zesty grapefruit-rosemary, or opt
+                        for pure, unflavored perfection.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="flex items-center justify-center h-24 w-24 rounded-full bg-slate-800 border-2 border-slate-700 text-sky-400 mx-auto mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M21 10.5h.375c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125H21M4.5 10.5H18V15H4.5v-4.5zM3.75 18h15A2.25 2.25 0 0021 15.75v-6.375A2.25 2.25 0 0018.75 7.5h-15A2.25 2.25 0 001.5 9.375v6.375A2.25 2.25 0 003.75 18z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">2. Unbox & Pour</h3>
+                    <p class="text-slate-400">Our sustainably-packaged ice is delivered to your door. Simply place a
+                        sphere in your glass and pour your drink over it.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="flex items-center justify-center h-24 w-24 rounded-full bg-slate-800 border-2 border-slate-700 text-sky-400 mx-auto mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.572L16.5 21.75l-.398-1.178a3.375 3.375 0 00-2.455-2.456L12.75 18l1.178-.398a3.375 3.375 0 002.455-2.456L16.5 14.25l.398 1.178a3.375 3.375 0 002.456 2.456l1.178.398-1.178.398a3.375 3.375 0 00-2.456 2.456z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">3. Experience the Shift</h3>
+                    <p class="text-slate-400">Watch as the ice chills without diluting, slowly releasing its aromatic
+                        essence and transforming your beverage sip by sip.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist/CTA Section -->
+    <section id="waitlist" class="py-20 sm:py-32 section-gradient">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 p-8 sm:p-12 rounded-2xl shadow-2xl">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Be the First to Experience Aura Ice.</h2>
+                <p class="max-w-2xl mx-auto text-slate-300 text-lg mb-8">
+                    We're launching soon in select US cities. Join our exclusive waitlist for early access, a special
+                    launch discount, and to be part of the beverage revolution.
+                </p>
+
+                <form id="waitlist-form" class="max-w-md mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" id="email-input" name="email" placeholder="Enter your email address"
+                               required
+                               class="w-full px-5 py-3 rounded-full bg-slate-800/70 text-white placeholder-slate-400 focus:ring-2 focus:ring-sky-400 focus:outline-none border border-slate-700">
+                        <button type="submit"
+                                class="cta-button bg-sky-500 text-white font-bold py-3 px-8 rounded-full w-full sm:w-auto hover:bg-sky-400">
+                            Join Now
+                        </button>
+                    </div>
+                </form>
+                <div id="success-message" class="mt-4 text-white font-semibold hidden">
+                    ✅ Thank you! You're on the list. We'll be in touch soon.
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer - UPDATED -->
+<footer class="bg-slate-900">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="col-span-2 md:col-span-1">
+                <a href="#" class="flex items-center">
+                    <span class="text-2xl font-bold text-white tracking-wider">AURA</span>
+                </a>
+                <p class="mt-4 text-slate-400 text-sm">Elevating sips, one sphere at a time.</p>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold text-slate-200 tracking-wider uppercase">Product</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="#" class="text-base text-slate-400 hover:text-sky-400">Infusions</a></li>
+                    <li><a href="#" class="text-base text-slate-400 hover:text-sky-400">Pure Ice</a></li>
+                    <li><a href="#" class="text-base text-slate-400 hover:text-sky-400">Subscriptions</a></li>
+                    <li><a href="#" class="text-base text-slate-400 hover:text-sky-400">Gifting</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold text-slate-200 tracking-wider uppercase">Company</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><a href="#" class="text-base text-slate-400 hover:text-sky-400">About Us</a></li>
+                    <li><a href="#" class="text-base text-slate-400 hover:text-sky-400">Sustainability</a></li>
+                    <li><a href="#" class="text-base text-slate-400 hover:text-sky-400">Press</a></li>
+                    <li><a href="#" class="text-base text-slate-400 hover:text-sky-400">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-8 border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between">
+            <p class="text-sm text-slate-500 md:order-1">&copy; 2025 Aura Ice. All rights reserved.</p>
+            <div class="flex space-x-6 md:order-2 mt-4 md:mt-0">
+                <a href="#" class="text-slate-500 hover:text-sky-400">
+                    <span class="sr-only">Instagram</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                              d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427C2.013 14.784 2 14.43 2 12s.013-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427.465C8.901 2.013 9.256 2 11.685 2h.63zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM12 14a2 2 0 110-4 2 2 0 010 4zm6.4-8.85a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </a>
+                <a href="#" class="text-slate-500 hover:text-sky-400">
+                    <span class="sr-only">Twitter</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // JavaScript for handling the waitlist form submission
+    const waitlistForm = document.getElementById('waitlist-form');
+    const successMessage = document.getElementById('success-message');
+
+    waitlistForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const emailInput = document.getElementById('email-input');
+        const email = emailInput.value;
+
+        // Basic email validation
+        if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            // In a real application, you would send this email to your server/mailing list service (e.g., Mailchimp, ConvertKit)
+            console.log(`Email submitted for waitlist: ${email}`);
+
+            // Hide the form and show the success message
+            const formContainer = waitlistForm.parentElement;
+            formContainer.innerHTML = `<div class="text-center"><h3 class="text-2xl font-bold text-white">✅ You're on the list!</h3><p class="text-slate-300 mt-2">Thank you for joining. We'll be in touch with exclusive updates soon.</p></div>`;
+
+        } else {
+            // Simple feedback for invalid email
+            emailInput.classList.add('ring-2', 'ring-red-500');
+            setTimeout(() => {
+                emailInput.classList.remove('ring-2', 'ring-red-500');
+            }, 3000);
+        }
+    });
+</script>
+
+</body>
+</html>
